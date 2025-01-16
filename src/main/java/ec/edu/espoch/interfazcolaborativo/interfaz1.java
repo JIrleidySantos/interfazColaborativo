@@ -27,37 +27,219 @@ public class interfaz1 extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTitulo = new javax.swing.JLabel();
+        lblNumero1 = new javax.swing.JLabel();
+        lblNumero2 = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
+        lblNumero3 = new javax.swing.JLabel();
+        txtNumero1 = new java.awt.TextField();
+        txtNumero2 = new java.awt.TextField();
+        txtNumero3 = new java.awt.TextField();
+        txtResultado = new java.awt.TextField();
+        btnCalcular = new java.awt.Button();
+        lblOpcion = new java.awt.Label();
+        cbxOpciones = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         lblTitulo.setText("Calculadora Practica");
 
+        lblNumero1.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        lblNumero1.setText("Ingrese el primer numero: ");
+
+        lblNumero2.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        lblNumero2.setText("Ingrese el segundo numero: ");
+
+        lblResultado.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        lblResultado.setText("Resultado:");
+
+        lblNumero3.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
+        lblNumero3.setText("Ingrese el tercer numero: ");
+
+        txtNumero1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumero1ActionPerformed(evt);
+            }
+        });
+
+        txtNumero2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumero2ActionPerformed(evt);
+            }
+        });
+
+        txtNumero3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumero3ActionPerformed(evt);
+            }
+        });
+
+        txtResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtResultadoActionPerformed(evt);
+            }
+        });
+
+        btnCalcular.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCalcular.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
+        btnCalcular.setLabel("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        lblOpcion.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lblOpcion.setText("Elija Una Opcion:");
+
+        cbxOpciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suma", "Resta", "Multiplicacion", "Division" }));
+        cbxOpciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxOpcionesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(lblTitulo)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(lblOpcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(22, 22, 22)
+                            .addComponent(cbxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(42, 42, 42)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblNumero1)
+                                        .addComponent(lblNumero2)
+                                        .addComponent(lblNumero3)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(64, 64, 64)
+                                            .addComponent(lblResultado)))
+                                    .addGap(26, 26, 26)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtNumero3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(147, 147, 147)
+                                    .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(70, 70, 70))))))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(261, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblOpcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNumero1)
+                    .addComponent(txtNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNumero2)
+                    .addComponent(txtNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNumero3)
+                    .addComponent(txtNumero3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblResultado)
+                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNumero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero1ActionPerformed
+
+    private void txtNumero2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero2ActionPerformed
+
+    private void txtNumero3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumero3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumero3ActionPerformed
+
+    private void txtResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtResultadoActionPerformed
+
+    private void cbxOpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOpcionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxOpcionesActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+        int num1=Integer.parseInt(txtNumero1.getText());
+        int num2=Integer.parseInt(txtNumero2.getText());
+        int num3=Integer.parseInt(txtNumero3.getText());
+        
+        String Opcion = (String)cbxOpciones.getSelectedItem();
+        
+        switch (Opcion) {
+            case "Suma":
+                Integer suma = num1+num2+num3;
+                txtResultado.setText(suma.toString());
+                break;
+            case "Resta":
+                Integer resta = num1-num2-num3;
+                txtResultado.setText(resta.toString());
+                break;
+            case "Multipicacion":
+                Integer mult = num1*num2*num3;
+                txtResultado.setText(mult.toString());
+                break;
+            case "Division":
+                if (num1!=0 && num2!=0 && num3!=0) {
+                    Integer div = num1/num2/num3;
+                txtResultado.setText(div.toString());
+                } else {System.out.println("No se puede dividir a 0");
+                }
+                
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button btnCalcular;
+    private javax.swing.JComboBox<String> cbxOpciones;
+    private javax.swing.JLabel lblNumero1;
+    private javax.swing.JLabel lblNumero2;
+    private javax.swing.JLabel lblNumero3;
+    private java.awt.Label lblOpcion;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitulo;
+    private java.awt.TextField txtNumero1;
+    private java.awt.TextField txtNumero2;
+    private java.awt.TextField txtNumero3;
+    private java.awt.TextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }

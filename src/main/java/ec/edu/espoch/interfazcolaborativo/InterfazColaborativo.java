@@ -11,6 +11,7 @@ package ec.edu.espoch.interfazcolaborativo;
 public class InterfazColaborativo {
 
     public static void main(String[] args) {
-        System.out.println("Hello d!");
+        interfaz1 objinterfaz = new interfaz1();
+        objinterfaz.setVisible(true);
     }
 }
