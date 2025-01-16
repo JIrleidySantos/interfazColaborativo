@@ -8,12 +8,12 @@ package ec.edu.espoch.interfazcolaborativo;
  *
  * @author SO-LAB1-PC24
  */
-public class interfaz2 extends javax.swing.JFrame {
+public class interfazOtro extends javax.swing.JFrame {
 
     /**
      * Creates new form interfaz2
      */
-    public interfaz2() {
+    public interfazOtro() {
         initComponents();
     }
 

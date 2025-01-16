@@ -13,5 +13,8 @@ public class InterfazColaborativo {
     public static void main(String[] args) {
         interfaz1 objinterfaz = new interfaz1();
         objinterfaz.setVisible(true);
+        
+        interfazOtro objinter = new interfazOtro();
+        objinter.setVisible(true);
     }
 }
